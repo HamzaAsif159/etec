@@ -7,7 +7,7 @@ export default function ProductCard({
   images = [],
   featured = false,
 }) {
-  const BASE_IMAGE_URL = "http://62.146.177.196:8080/";
+  const BASE_IMAGE_URL = "https://ndyaggyxnq.us-east-1.awsapprunner.com/";
   const mainImage = `${BASE_IMAGE_URL}${images[0]}`;
 
   return (

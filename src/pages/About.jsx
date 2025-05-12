@@ -1,4 +1,4 @@
-import AboutCard from "../components/AboutCard";
+import DetailCard from "../components/DetailCard";
 
 const CheckStore = ({ reverse = false }) => {
   return (
@@ -112,9 +112,24 @@ export default function About() {
 
       {/* About Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 py-8 md:py-12">
-        <AboutCard />
-        <AboutCard />
-        <AboutCard />
+        <DetailCard
+          title="Enduring Innovation"
+          desc="  Shop with confidence knowing that our products are sourced from
+        reputable factories worldwide, adhering to stringent compliance
+        standards"
+        />
+        <DetailCard
+          title="Enduring Innovation"
+          desc="  Shop with confidence knowing that our products are sourced from
+        reputable factories worldwide, adhering to stringent compliance
+        standards"
+        />
+        <DetailCard
+          title="Enduring Innovation"
+          desc="  Shop with confidence knowing that our products are sourced from
+        reputable factories worldwide, adhering to stringent compliance
+        standards"
+        />
       </div>
 
       {/* Check Store Sections */}

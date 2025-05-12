@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://62.146.177.196:8080/api",
+  baseURL: "https://ndyaggyxnq.us-east-1.awsapprunner.com/api",
 });
 
 // Request interceptor

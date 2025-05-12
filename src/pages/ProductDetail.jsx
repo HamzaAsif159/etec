@@ -5,6 +5,8 @@ import { fetchProductById } from "../redux/slices/productDetailSlice";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FeatureCard from "../components/FeatureCard";
+import ReviewCard from "../components/ReviewCard";
 
 export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -37,7 +39,7 @@ export default function ProductDetail() {
   }
 
   // Base URL for images
-  const baseURL = "http://62.146.177.196:8080/";
+  const baseURL = "https://ndyaggyxnq.us-east-1.awsapprunner.com/";
   const imagesWithBaseURL = product.images.map((image) => `${baseURL}${image}`);
 
   // Slider settings for mobile
@@ -260,6 +262,47 @@ export default function ProductDetail() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img
+            src="https://framerusercontent.com/images/hvO6FS5AyzdfvLMhR53gjJaQpE.png"
+            alt="feature-image"
+            className="w-full max-w-7xl h-auto max-h-[700px] my-4 rounded-3xl object-contain"
+          />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 py-8 md:py-12">
+          {product.features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              title={feature.name}
+              desc={feature.content}
+            />
+          ))}
+        </div>
+        <div className="flex flex-col lg:flex-row justify-between gap-6 items-start mt-8">
+          <h1 className="text-4xl font-medium">
+            What customers <br />
+            <span className="inline-block mt-2 text-gray-400">are saying</span>
+          </h1>
+
+          <div>
+            <p className="max-w-[420px]">
+              Experience the convenience and satisfaction shared by our thriving
+              community of shoppers who trust our ecommerce store for their
+              every purchase.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          {product.reviews.map((review, index) => (
+            <ReviewCard
+              key={index}
+              name={review.name}
+              review={review.content}
+            />
+          ))}
         </div>
       </div>
     </div>

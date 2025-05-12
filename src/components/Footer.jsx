@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-[#f7f7f7] text-black max-w-7xl mx-auto px-8 py-8 rounded-3xl mb-12">
@@ -15,14 +17,19 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Pages</h3>
               <ul className="space-y-2">
-                {["Home", "Shop", "About", "Blog"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                {[
+                  { name: "Home", path: "/" },
+                  { name: "Shop", path: "/shop" },
+                  { name: "About", path: "/about" },
+                  { name: "Blog", path: "/blog" },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
                       className="text-gray-600 hover:text-black transition-colors"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -30,14 +37,19 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
-                {["FAQ", "Contact", "Product", "404"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                {[
+                  { name: "FAQ", path: "/faq" },
+                  { name: "Contact", path: "/contact" },
+                  { name: "Product", path: "/shop" },
+                  { name: "404", path: "/random-page-not-found" }, // fallback or demo
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
                       className="text-gray-600 hover:text-black transition-colors"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
